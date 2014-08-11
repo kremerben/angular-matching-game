@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Angular Basics</title>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js"></script>
+<!-- 	<script src="jquery.min.js"></script> -->
+	<script src="app.js"></script>
+<!-- 	<script src="index.js"></script> -->
+	<script src="service.js"></script>
+	<script src="pokemanController.js"></script>
+	<link href="style.css" rel="stylesheet" type="text/css" media="all">
+
+  </head>
+
+<body>
+
+
+<div ng-app="team">
+
+
+<div ng-controller='firstController'>
+
+        <button ng-click='getTeam();' > Get a random team  </button>
+			        <div ng-repeat="pokemon in team track by $index" >
+				        <div class="pokemonMatch ok">{{ pokemon.name }}<br>
+					        <img src='{{ "http://pokeapi.co/media/img/" + pokemon.pkdx_id + ".png" }}' />
+				        </div>
+			        </div>
+
+</div>
+<div ng-controller='secondController'>
+
+        <button ng-click='playMatchGame();' > Play Matching Game  </button>
+        <div ng-show='noTeam'>NO TEAM - CLICK BUTTON ABOVE FIRST</div>
+        <div ng-show='winner'>Winner in {{ totalClicks }} clicks!</div>
+			        <div ng-repeat="pokemon in gameTeam track by $index" >
+				        <div ng-click="makeActive($index);" class="pokemonMatch game" >
+				        	<div ng-show="pokemon.showActive || pokemon.found"   >
+					        	{{ pokemon.name }}<br>
+						        				        <img  src='{{ "http://pokeapi.co/media/img/" + pokemon.pkdx_id + ".png" }}' />
+
+				        	</div>
+				        </div>
+			        </div>
+
+
+
+
+<!--
+        <button ng-click='loadTeam();' > Load the team  </button>
+        	<div ng-show='noTeam'>No team to load</div>
+			        <ul>
+			        <div ng-repeat="pokemon in team track by $index" >
+			        <li>{{ pokemon.name }}</li>
+			        </div>
+			        </ul>
+-->
+
+<!--
+		        <button ng-click='getStarter();' > Starter  </button>
+			        <ul>
+			        <li>{{ starter }}</li>
+			        </ul>
+				
+				<button ng-click='getRandom();' > random  </button>
+				<ul><li>{{ random.name }}</li></ul>
+-->
+				
+
+
+
+
+
+
+
+
+
+<!--
+<div >
+        <input type="text" ng-model="searchTerms">
+        <button ng-click='getMovies();' > Get Movies  </button>
+        <input type="text" ng-model="quickquery">
+
+		<div ng-show="showResults">
+			<h3>Search: {{ searchTerms }}</h3>
+			<ul>
+			        <div ng-repeat="movie in movies | filter:quickquery track by $index" >
+			        	<li>{{ movie.title }}	
+			        		<div ng-show="movie.showImage">
+			        		<img ng-click="hideInfo($index);" src="{{ movie.posters.original }}" />
+								<button ng-click="hideInfo($index);">Hide Image</button> 
+							</div> 
+							<div ng-hide="movie.showImage">
+								<button ng-click="moreInfo($index);">Show Image</button>
+							</div>
+	</li>
+			        	
+			        </div>
+			</ul>
+		</div>
+</div>
+        	<br><hr>
+-->
+<!--
+		<pre>
+	    	book = {{ book | json }} 
+		</pre>
+	<br><hr>
+		<pre>
+	    	booklist = {{ booklist | json }} 
+		</pre>
+			<br><hr>
+-->
+
+</div>
+
+
+
+
+
+
+</div>
+</body>
+</html>

@@ -1,0 +1,16 @@
+body {
+text-align: center;
+}
+
+.pokemonMatch {
+float: left;
+width: 150px;
+height: 150px;
+border: 1px solid black !important;
+border-radius: 5px;
+padding: 5px !important;
+margin-right: 5px !important;
+margin-bottom: 5px !important;
+background-color: rgba(243,144,144,0.88); 
+}
+
